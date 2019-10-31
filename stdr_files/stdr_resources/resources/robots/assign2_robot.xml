@@ -13,7 +13,7 @@
         </footprint>
         <kinematic>
             <kinematic_specifications>
-                <kinematic_model></kinematic_model>
+                <kinematic_model>ideal</kinematic_model>
                 <kinematic_parameters>
                     <a_ux_ux>0</a_ux_ux>
                     <a_ux_uy>0</a_ux_uy>

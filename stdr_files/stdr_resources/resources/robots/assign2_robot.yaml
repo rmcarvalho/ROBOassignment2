@@ -28,7 +28,7 @@ robot:
               noise_std: 0
     - kinematic:
         kinematic_specifications:
-          kinematic_type: ""
+          kinematic_type: ideal
           kinematic_parameters:
             a_ux_ux: 0
             a_ux_uy: 0
