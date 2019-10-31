@@ -15,5 +15,5 @@ rosrun robo_assign2 follow_wall_robot_node <robot_frame_id> <laser_frame_id>
 
 for example:
 ```
-rosrun robo_assign2 follow_wall_robot_node robot_0 laser_0
+rosrun robo_assign2 follow_wall_robot_node robot0 laser0
 ```
