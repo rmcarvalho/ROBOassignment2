@@ -1,8 +1,8 @@
 <robot>
     <robot_specifications>
         <initial_pose>
-            <x>0</x>
-            <y>0</y>
+            <x>5</x>
+            <y>5</y>
             <theta>0</theta>
         </initial_pose>
         <footprint>
@@ -19,7 +19,7 @@
                 <min_range>0.2</min_range>
                 <num_rays>200</num_rays>
                 <frequency>10</frequency>
-                <frame_id>laser_0</frame_id>
+                <frame_id>laser0</frame_id>
                 <pose>
                     <x>0</x>
                     <y>0</y>
