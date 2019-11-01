@@ -1,4 +1,4 @@
-# ROBOassignment1
+# ROBOassignment2
 
 ## Installation
 
@@ -18,6 +18,17 @@ catkin_make
 ```
 
 ## Running
+
+ * On any terminal you use, run 
+ 
+ ```source devel/setup.bash```
+
+ * Open a terminal and run:
+ 
+```
+roscore
+```
+
 
  * Open a terminal and choose a map:
 ```
