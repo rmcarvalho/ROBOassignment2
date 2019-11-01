@@ -13,8 +13,8 @@ class FollowWall {
    ros::Subscriber sensor_sub;
    ros::Publisher velocity_pub;
 
-   static const float ideal_distance = 0.3; //ideal distance the center of the robot should stay from the wall (in meters)
-   static const float movement_speed = 0.4;
+   static const float ideal_distance = 0.2; //ideal distance the center of the robot should stay from the wall (in meters)
+   static const float movement_speed = 0.2;
  public:
     FollowWall(char**);
     void SensorHandler(const sensor_msgs::LaserScan& msg);
