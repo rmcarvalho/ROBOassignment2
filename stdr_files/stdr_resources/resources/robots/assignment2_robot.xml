@@ -7,7 +7,7 @@
         </initial_pose>
         <footprint>
             <footprint_specifications>
-                <radius>0.2</radius>
+                <radius>0.1</radius>
                 <points />
             </footprint_specifications>
         </footprint>
@@ -15,8 +15,8 @@
             <laser_specifications>
                 <max_angle>1.74533</max_angle>
                 <min_angle>-1.74533</min_angle>
-                <max_range>2</max_range>
-                <min_range>0.2</min_range>
+                <max_range>1</max_range>
+                <min_range>0.1</min_range>
                 <num_rays>200</num_rays>
                 <frequency>10</frequency>
                 <frame_id>laser0</frame_id>
