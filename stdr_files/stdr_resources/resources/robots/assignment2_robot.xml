@@ -15,7 +15,7 @@
             <laser_specifications>
                 <max_angle>1.74533</max_angle>
                 <min_angle>-1.74533</min_angle>
-                <max_range>1</max_range>
+                <max_range>0.8</max_range>
                 <min_range>0.1</min_range>
                 <num_rays>200</num_rays>
                 <frequency>10</frequency>

@@ -13,7 +13,7 @@ robot:
         laser_specifications:
           max_angle: 1.745329
           min_angle: -1.745329
-          max_range: 1
+          max_range: 0.8
           min_range: 0.1
           num_rays: 200
           frequency: 10
