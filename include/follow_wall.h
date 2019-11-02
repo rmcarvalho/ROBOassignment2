@@ -2,6 +2,7 @@
 #define FOLLOW_WALL_H
 
 #include <iostream>
+#include <stdlib.h> 
 
 #include <ros/package.h>
 #include "ros/ros.h"

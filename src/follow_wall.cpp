@@ -45,17 +45,15 @@ void FollowWall::SensorHandler(const sensor_msgs::LaserScan& msg) {
 
     if(min_distance < msg.range_max && !isOnMapLimit) //found some obstacle
     {   
-        ROS_INFO_STREAM("ON WALL");
         float k = 25;
 
         vel_msg.linear.x = movement_speed;
 		vel_msg.angular.z = (-k * (std::sin(deg2rad(alpha)) - (min_distance - ideal_distance))) * vel_msg.linear.x;
-        ROS_INFO_STREAM(min_distance - ideal_distance);
     } else { //no walls -> wander to find wall
         if(isOnMapLimit) {
-            ROS_INFO_STREAM("Map LIMIT");
             vel_msg.linear.x = 0;
-            vel_msg.angular.z = deg2rad(rand() % 180 + 90); // random
+            float angular = std::rand() % 180 + 90;
+            vel_msg.angular.z = deg2rad(angular); // random
         } else {
             vel_msg.linear.x = movement_speed*2;
 		    vel_msg.angular.z = 0;
@@ -80,10 +78,9 @@ void FollowWall::OdometryHandler(const nav_msgs::Odometry& msg) {
 
 bool FollowWall::AtMapLimit(float range_max) {
     float min_distance_to_edge = range_max + 0.005;
-    std::cout << firstOdometry << "\tat: " << last_odometry_position[0] << ", " << last_odometry_position[1] << "\trotated: " << last_odometry_yaw << "\tkeep distance: " << min_distance_to_edge << std::endl;
+
     return firstOdometry && ((last_odometry_position[0] <= min_distance_to_edge && std::abs(rad2deg(last_odometry_yaw)) > 90) ||
         (last_odometry_position[0] >= map_width - min_distance_to_edge && std::abs(rad2deg(last_odometry_yaw)) < 90) ||
         (last_odometry_position[1] <= min_distance_to_edge && std::sin(last_odometry_yaw) < std::sin(deg2rad(10))) ||
         (last_odometry_position[1] >= map_height - min_distance_to_edge && std::sin(last_odometry_yaw) > std::sin(deg2rad(-10))));
-
 }
