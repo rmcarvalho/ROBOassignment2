@@ -8,8 +8,6 @@
 #include <geometry_msgs/Twist.h>
 #include <sensor_msgs/LaserScan.h>
 #include <nav_msgs/Odometry.h>
-//#include <geometry_msgs/PoseWithCovariance.h>
-//#include <geometry_msgs/TwistWithCovariance.h>
 
 class FollowWall {
  private:

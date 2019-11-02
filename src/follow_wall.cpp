@@ -28,10 +28,7 @@ void FollowWall::SensorHandler(const sensor_msgs::LaserScan& msg) {
     geometry_msgs::Twist vel_msg;
 
     float angle_current;
-    /*float right_obstacle_min_distance = INFINITY, right_obstacle_angle = 0;
-    float left_obstacle_min_distance = INFINITY, left_obstacle_angle = 0;
-    float front_obstacle_min_distance = INFINITY;
-    */
+    
     float min_distance = INFINITY, alpha;
 
     for(int i=0; i< msg.ranges.size(); i++) {
@@ -42,20 +39,6 @@ void FollowWall::SensorHandler(const sensor_msgs::LaserScan& msg) {
             min_distance = msg.ranges[i];
             alpha = 90 - std::abs(angle_current);
         }
-        /*if(angle_current < 0) //Right side
-        {
-            if(msg.ranges[i] < right_obstacle_min_distance)
-            {
-                right_obstacle_min_distance = msg.ranges[i];
-                right_obstacle_angle = angle_current;
-            }   
-        } else { //Left side and front 
-            if(msg.ranges[i] < left_obstacle_min_distance)
-            {
-                left_obstacle_min_distance = msg.ranges[i];
-                left_obstacle_angle = angle_current;
-            } 
-        }*/
     }
     
     bool isOnMapLimit = AtMapLimit(msg.range_max);
