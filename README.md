@@ -47,7 +47,7 @@ $ roslaunch stdr_launchers assignment2_d<thickness>_a<angle>.launch
 Where thickness is one of three values: {20, 40, 60} and angle is one of {0, 45, 90, 135, 180}
 	* The third terminal should, from the workspace directory, run:
 ```
-			$ source devel/setup.bash
-			$ rosrun robo_assign2 follow_wall_robot_node robot0 laser0
+$ source devel/setup.bash
+$ rosrun robo_assign2 follow_wall_robot_node robot0 laser0
 ```
 Where 'robot0' and 'laser0' are the names of the robot and the laser, respectively, in the simulator.
