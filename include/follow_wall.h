@@ -16,13 +16,13 @@ class FollowWall {
    ros::Publisher velocity_pub;
    ros::Subscriber odometry_sub;
 
-   static const float ideal_distance = 0.05; //ideal distance the center of the robot should stay from the wall (in meters)
-   static const float movement_speed = 0.2;
+   static const float ideal_distance;
+   static const float movement_speed;
 
    float last_odometry_position[2];
    float last_odometry_yaw;
-   static const float map_width = 10;
-   static const float map_height = 10;
+   static const float map_width;
+   static const float map_height;
    bool firstOdometry;
  public:
     FollowWall(char**);

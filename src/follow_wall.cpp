@@ -8,6 +8,11 @@ float deg2rad (float deg) {
     return deg * 3.14159 / 180;
 }
 
+const float FollowWall::map_height = 10;
+const float FollowWall::map_width = 10;
+const float FollowWall::ideal_distance = 0.05; //ideal distance the center of the robot should stay from the wall (in meters)
+const float FollowWall::movement_speed = 0.2;
+
 FollowWall::FollowWall(char** argv) {
     ros::NodeHandle nh;
     firstOdometry = false;
