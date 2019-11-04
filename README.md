@@ -26,7 +26,7 @@ Ricardo_Carvalho_Vítor_Magalhães
 ## Requirements
 
 This package requires:
-	* ROS Kinetic (available at: http://wiki.ros.org/kinetic/Installation)
+ * ROS Kinetic (available at: http://wiki.ros.org/kinetic/Installation)
  * Setup ros workspace: http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
  * STDR simulator installed into its own package in the workspace (available at: http://wiki.ros.org/stdr_simulator/Tutorials/Set%20up%20STDR%20Simulator#Get_STDR_Simulator_from_Github) 
  * the contents of this folder should be copied inte a package named 'robo_assign2', created with 'catkin_create_pkg robo_assign2'
@@ -39,13 +39,13 @@ If all the requirements are met, the project can be built by running 'catkin_mak
 ## Executing
 3 terminals are required to run the program:
  * The first terminal should run 'roscore'
-	* Then we can open the simulator and choose a map, by opening a terminal in te workspace folder and running:
+ * Then we can open the simulator and choose a map, by opening a terminal in te workspace folder and running:
 ```
 $ source devel/setup.bash
 $ roslaunch stdr_launchers assignment2_d<thickness>_a<angle>.launch
 ```
 Where thickness is one of three values: {20, 40, 60} and angle is one of {0, 45, 90, 135, 180}
-	* The third terminal should, from the workspace directory, run:
+ * The third terminal should, from the workspace directory, run:
 ```
 $ source devel/setup.bash
 $ rosrun robo_assign2 follow_wall_robot_node robot0 laser0
