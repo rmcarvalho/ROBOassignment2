@@ -1,48 +1,53 @@
 # ROBOassignment2
-
 https://www.overleaf.com/2417578735rqhtymrhhhpx
 
+## Directory Structure
 
-## Installation
+Ricardo_Carvalho_Vítor_Magalhães
+│
+├───include
+│
+├───src
+│
+└───stdr_files
+	├───stdr_launchers
+	│   └───launch
+	│           
+	└───stdr_resources
+		├───maps
+		│       
+		└───resources
+			└───robots
 
-* Setup ros workspace: http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
-* Install STDR from Github into it's own package in the workspace - http://wiki.ros.org/stdr_simulator/Tutorials/Set%20up%20STDR%20Simulator
+ * The 'include' folder is has header files.
+ * The 'src' folder has the c++ source files.
+ * The 'stdr_files' folder has all the files to be used with the simulator (launcher files, maps as PNG and YAML files and a robot as YAML and XML files)
 
- * In the 'src' folder create package 'robo_assign2' with command
-```
-catkin_create_pkg robo_assign2
-```
- * Clone this repository into the 'robo_assign2' folder
- * Copy the files in robo_assign2/stdr_files to the stdr_simulator package
+## Requirements
 
- * Build the package in the workspace folder by running:
-```
-catkin_make
-```
+This package requires:
+	* ROS Kinetic (available at: http://wiki.ros.org/kinetic/Installation)
+ * Setup ros workspace: http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+ * STDR simulator installed into its own package in the workspace (available at: http://wiki.ros.org/stdr_simulator/Tutorials/Set%20up%20STDR%20Simulator#Get_STDR_Simulator_from_Github) 
+ * the contents of this folder should be copied inte a package named 'robo_assign2', created with 'catkin_create_pkg robo_assign2'
+	* the contents of the 'stdr_files' folder should be copied into the 'stdr_simulator' folder
+	* buiding the project requires c++11
 
-## Running
+## Compiling
+If all the requirements are met, the project can be built by running 'catkin_make' from the ROS workspace folder.
 
- * On any terminal you use, run 
- 
- ```source devel/setup.bash```
-
- * Open a terminal and run:
- 
+## Executing
+3 terminals are required to run the program:
+ * The first terminal should run 'roscore'
+	* Then we can open the simulator and choose a map, by opening a terminal in te workspace folder and running:
 ```
-roscore
+$ source devel/setup.bash
+$ roslaunch stdr_launchers assignment2_d<thickness>_a<angle>.launch
 ```
-
-
- * Open a terminal and choose a map:
+Where thickness is one of three values: {20, 40, 60} and angle is one of {0, 45, 90, 135, 180}
+	* The third terminal should, from the workspace directory, run:
 ```
-roslaunch stdr_launchers assignment2_d20_a<angle>.launch <- angle can be one of: 0 45 90 135 180
+			$ source devel/setup.bash
+			$ rosrun robo_assign2 follow_wall_robot_node robot0 laser0
 ```
-
- * Open a second terminal and deploy robot:
-```
-rosrun robo_assign2 follow_wall_robot_node <robot_frame_id> <laser_frame_id>
-```
-for example:
-```
-rosrun robo_assign2 follow_wall_robot_node robot0 laser0
-```
+Where 'robot0' and 'laser0' are the names of the robot and the laser, respectively, in the simulator.
