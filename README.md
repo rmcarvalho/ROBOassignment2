@@ -2,7 +2,7 @@
 https://www.overleaf.com/2417578735rqhtymrhhhpx
 
 ## Directory Structure
-
+```
 Ricardo_Carvalho_Vítor_Magalhães
 │
 ├───include
@@ -18,7 +18,7 @@ Ricardo_Carvalho_Vítor_Magalhães
 		│       
 		└───resources
 			└───robots
-
+```
  * The 'include' folder is has header files.
  * The 'src' folder has the c++ source files.
  * The 'stdr_files' folder has all the files to be used with the simulator (launcher files, maps as PNG and YAML files and a robot as YAML and XML files)
